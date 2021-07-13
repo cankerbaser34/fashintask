@@ -1,11 +1,11 @@
-#Fashionette’s automated tests code challenge  with Cucumber Framework and Selenium
+# Fashionette’s automated tests code challenge  with Cucumber Framework and Selenium
 
 This is a simple automation testing project which automate the workflow of purchasing one item ,adding to card, login on
 (https://www.fashionette.co.uk/) with
 Cucumber and Selenium Web driver,executing by Junit, based on BDD framework.
 
-##Usage and set up
-###Environment
+## Usage and set up
+### Environment
 - Have a JDK installed
 - Have a Maven installed and available on your PATH or IDE
 - Intellij or Eclipse
