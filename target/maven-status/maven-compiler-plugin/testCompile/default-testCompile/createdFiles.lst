@@ -9,6 +9,5 @@ com/fashionette/stepDefinitions/Hooks.class
 com/fashionette/stepDefinitions/VoucherSteps.class
 com/fashionette/testRunner/Runner.class
 com/fashionette/uipages/Order_loginPage.class
-com/fashionette/uipages/OrderPage.class
 com/fashionette/uipages/VoucherPage.class
 com/fashionette/uipages/PersonalData.class

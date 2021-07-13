@@ -3,7 +3,6 @@ package com.fashionette.uipages;
 import com.fashionette.utilities.ConfigurationReader;
 import com.fashionette.utilities.Driver;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -93,8 +92,8 @@ public class Order_loginPage extends Base {
 
         waitForClickablility(add_to_cart_button, 4);
         add_to_cart_button.click();
-
-        waitFor(2);
+        waitForPageToLoad(4);
+      //  waitFor(1);
 
     }
 
@@ -103,7 +102,6 @@ public class Order_loginPage extends Base {
 
         waitForClickablility(login_button, 5);
         login_button.click();
-
         waitForPageToLoad(5);
 
 
