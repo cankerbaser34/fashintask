@@ -2,6 +2,8 @@ com/fashionette/stepDefinitions/PurchaseLoginSteps.class
 com/fashionette/uipages/Base.class
 com/fashionette/stepDefinitions/PersonalDataEditSteps.class
 com/fashionette/testRunner/FailedTestRunner.class
+com/fashionette/uipages/FIlterpage.class
+com/fashionette/stepDefinitions/FiltersStepDefinitions.class
 com/fashionette/utilities/ConfigurationReader.class
 com/fashionette/uipages/Base$1.class
 com/fashionette/utilities/Driver.class
