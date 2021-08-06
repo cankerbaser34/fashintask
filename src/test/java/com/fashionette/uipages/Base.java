@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 public class Base {
 
     public static void clearCookies() {
@@ -48,7 +47,6 @@ public class Base {
     }
 
 
-
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -69,12 +67,14 @@ public class Base {
     }
 
 
-
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.get(ConfigurationReader.get("url")), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
-    }
 
+
+
+
+    }
 
 
 }
