@@ -1,0 +1,13 @@
+com/fashionette/stepDefinitions/PurchaseLoginSteps.class
+com/fashionette/uipages/Base.class
+com/fashionette/stepDefinitions/PersonalDataEditSteps.class
+com/fashionette/testRunner/FailedTestRunner.class
+com/fashionette/utilities/ConfigurationReader.class
+com/fashionette/uipages/Base$1.class
+com/fashionette/utilities/Driver.class
+com/fashionette/stepDefinitions/Hooks.class
+com/fashionette/stepDefinitions/VoucherSteps.class
+com/fashionette/testRunner/Runner.class
+com/fashionette/uipages/Order_loginPage.class
+com/fashionette/uipages/VoucherPage.class
+com/fashionette/uipages/PersonalData.class
