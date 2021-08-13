@@ -48,6 +48,7 @@ public class FIlterpage {
     public void click_designerfilter() {
         Base.waitForClickablility(filter_designer, 4);
         filter_designer.click();
+        Base.waitForClickablility(chirtan_lob_select,5);
         chirtan_lob_select.click();
     }
 
@@ -69,6 +70,7 @@ public class FIlterpage {
     public void filter_sale() {
         Base.waitForClickablility(sale_button, 3);
         sale_button.click();
+        Base.waitForClickablility(new_on_sale,4);
         new_on_sale.click();
 
     }

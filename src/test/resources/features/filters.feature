@@ -13,4 +13,5 @@ Feature: Check the filters functionality
       And the customer clicks add to cart button
       And the customer navigates to login page
       And the customer logged in with valid "email" and "password"
+      And the customer clicks go to card button
 
