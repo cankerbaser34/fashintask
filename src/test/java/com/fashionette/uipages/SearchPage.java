@@ -30,6 +30,9 @@ public class SearchPage extends Base {
     @FindBy(css = "img[title='J.W.Anderson, Small Chain Hobo Black']")
     WebElement selected_product;
 
+    @FindBy(css = ".cart--header__button__icon.icon.icon--inline.icon--till")
+    WebElement go_to_cart_button;
+
 
     public void click_search_button() {
 
@@ -58,6 +61,11 @@ public class SearchPage extends Base {
     public void click_selected_product() {
         Base.waitForClickablility(selected_product, 4);
         selected_product.click();
+    }
+
+    public void navto_cart_button(){
+
+        go_to_cart_button.click();
     }
 
 }

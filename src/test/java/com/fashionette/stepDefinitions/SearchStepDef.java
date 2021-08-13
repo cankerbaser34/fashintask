@@ -42,4 +42,10 @@ public class SearchStepDef extends Base {
         searchPage.click_selected_product();
 
     }
+
+    @And("the customer clicks  card button")
+    public void theCustomerClicksCardButton() {
+
+        searchPage.navto_cart_button();
+    }
 }

@@ -4,7 +4,7 @@ Feature: Check the filters functionality
     Given the customer is on the homePage
     When the customer navigates to shoes page to see available shoes
 
-    Scenario:
+    Scenario: Filtering different fields
       Then the customer filters designers
       Then the customer filters color of the product
       And the customer filters categories

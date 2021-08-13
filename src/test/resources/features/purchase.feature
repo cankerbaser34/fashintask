@@ -1,6 +1,6 @@
 
 Feature: Add a product to the cart,login, modify user name and apply voucher
-  @smoke
+
   Scenario: Customer can purchase
     Given the customer is on the homePage
     When the customer navigates to shoes page to see available shoes
@@ -22,7 +22,7 @@ Feature: Add a product to the cart,login, modify user name and apply voucher
     And the customer selects Mr box as a title
     And the customer modifies first and last name and save changes
     Then it is verified that changes were applied correctly
-  @smoke
+
   @voucher
   Scenario: Apply a voucher
     Given the customer is on the homePage
