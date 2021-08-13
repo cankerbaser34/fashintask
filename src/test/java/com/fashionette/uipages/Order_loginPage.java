@@ -26,7 +26,7 @@ public class Order_loginPage extends Base {
     @FindBy(id = "uc-btn-accept-banner")
     public WebElement accept_cookies;
 
-    @FindBy(css = "a[title='Hugo, Match Slid Open Miscellaneous'] div[itemprop='brand']")
+    @FindBy(css = "img[title='Alexander McQueen, Sneakers Leather White/Black']")
     public WebElement selected_product;
 
     @FindBy(css = "div[class='btn btn--bigger-icon preventspinner btn-default'] div[class='btn__content']")
