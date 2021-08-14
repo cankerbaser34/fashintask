@@ -14,7 +14,7 @@ public class FIlterpage {
 
     }
 
-    @FindBy(xpath = "//div[contains(text(),'Designers')]")
+    @FindBy(css = ".product-list-top__sorting")
     public WebElement filter_designer;
 
     @FindBy(xpath = "//span[normalize-space()='Christian Louboutin']")
