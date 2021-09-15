@@ -24,6 +24,12 @@ public class SearchStepDef extends Base {
         searchPage.type_word(keyword);
     }
 
+    @And("the customer selects desired bag")
+    public void theCustomerSelectsDesiredBag() {
+
+        searchPage.clickSelectedBag();
+    }
+
     @When("the customer clicks designers  button")
     public void theCustomerClicksDesignersButton() {
 
@@ -48,4 +54,6 @@ public class SearchStepDef extends Base {
 
         searchPage.navto_cart_button();
     }
+
+
 }

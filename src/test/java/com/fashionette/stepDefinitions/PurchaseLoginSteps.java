@@ -64,7 +64,7 @@ public class PurchaseLoginSteps {
     public void thePriceAndNameOfProductsVerified() {
 
         or_login.assert_prices();
-       or_login.assert_names();
+        or_login.assert_names();
 
 
     }
