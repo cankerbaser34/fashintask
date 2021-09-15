@@ -21,6 +21,8 @@ public class SearchPage extends Base {
     @FindBy(css = " input[placeholder='What are you looking for?'][name='q']")
     WebElement search_input;
 
+    @FindBy(css = "img[title='Ted Baker, Croccon Croc Detail Large Icon Black']")
+    WebElement item_bag;
     @FindBy(css = "a[title='Designers']")
     WebElement designers_page_button;
 
@@ -48,6 +50,10 @@ public class SearchPage extends Base {
         Base.waitFor(4);
     }
 
+    public void clickSelectedBag() {
+
+        item_bag.click();
+    }
 
     public void navto_designers_page() {
 
@@ -63,7 +69,7 @@ public class SearchPage extends Base {
         selected_product.click();
     }
 
-    public void navto_cart_button(){
+    public void navto_cart_button() {
 
         go_to_cart_button.click();
     }

@@ -28,7 +28,7 @@ public class GiftsForMen extends Base {
     @FindBy(css = "div[class='sticky-product-list-top container'] li:nth-child(1)")
     WebElement price_ascending;
 
-    @FindBy(css = "img[title='Daniel Wellington, Watch Iconic Emerald 40 Silver Green ']")
+    @FindBy(css = "a[title='Diesel, Baby Chief Digital Stainless Steel Watch Gold-Tone']")
     WebElement desired_watched;
 
     public void navtoGiftsForMan() {
@@ -52,7 +52,7 @@ public class GiftsForMen extends Base {
 
     }
     public void clickDesiredWatch(){
-        Base.waitForClickablility(desired_watched,4);
+        Base.waitForClickablility(desired_watched,40);
         desired_watched.click();;
     }
 }

@@ -2,10 +2,13 @@ package com.fashionette.uipages;
 
 import com.fashionette.utilities.ConfigurationReader;
 import com.fashionette.utilities.Driver;
+import io.cucumber.java.bs.A;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.concurrent.TimeUnit;
 
 public class Order_loginPage extends Base {
 
@@ -41,8 +44,18 @@ public class Order_loginPage extends Base {
     @FindBy(css = "input[name='password']")
     public WebElement password_input;
 
+    @FindBy(css = ".forgot-password-toggle")
+    public WebElement forgot_password_link_text;
+
     @FindBy(xpath = "//button[normalize-space()='Login']")
     public WebElement login_submit;
+
+    @FindBy(css = ".account__welcome.text__center.font-size--hero")
+    public WebElement welcome_text_message;
+
+    @FindBy(css = ".login__errortext.login--modal__response-error")
+    public WebElement invalid_ps_email_message;
+
     @FindBy(css = ".cart--header__icons")
     public WebElement go_to_cart_button;
 
@@ -52,7 +65,7 @@ public class Order_loginPage extends Base {
     @FindBy(css = "#cart__total")
     public WebElement cart_price;
 
-    @FindBy(css = "a[href='https://www.fashionette.co.uk/hugo'][itemprop='brand']")
+    @FindBy(css = "//a[contains(text(),'Alexander McQueen')]")
     public WebElement selected_shoes_name;
 
     @FindBy(css = ".cart-item--brand")
@@ -62,9 +75,12 @@ public class Order_loginPage extends Base {
     public void main_page() {
 
         String url = ConfigurationReader.get("url");
-        Driver.get(ConfigurationReader.get("browser")).manage().window().maximize();
         Driver.get(ConfigurationReader.get("browser")).get(url);
+        Driver.get(ConfigurationReader.get("browser")).manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         waitForClickablility(accept_cookies, 3);
+
+        System.out.println(Driver.get(ConfigurationReader.get("browser")).getTitle());
+
         accept_cookies.click();
     }
 
@@ -90,11 +106,19 @@ public class Order_loginPage extends Base {
 
     public void add_to_cart() {
 
-        waitForClickablility(add_to_cart_button, 4);
+        waitForClickablility(add_to_cart_button, 5);
         add_to_cart_button.click();
         waitForPageToLoad(4);
-      //  waitFor(1);
+        //  waitFor(1);
 
+    }
+
+
+    public void assertForgotPasswordLink() {
+
+        String forgotPassword = forgot_password_link_text.getText();
+        System.out.println(forgotPassword);
+        Assert.assertTrue(forgotPassword.contains("Forgot your password?"));
     }
 
     public void navto_login() {
@@ -102,7 +126,7 @@ public class Order_loginPage extends Base {
 
         waitForClickablility(login_button, 5);
         login_button.click();
-        waitForPageToLoad(5);
+        waitFor(2);
 
 
     }
@@ -114,10 +138,24 @@ public class Order_loginPage extends Base {
             email_input.sendKeys(mail);
             password_input.sendKeys(password);
             login_submit.click();
+            waitFor(3);
 
         } catch (Exception e) {
             System.out.println("Invalid username or password");
         }
+    }
+
+    public void assertSucessLogin() {
+
+        String welcome_message = welcome_text_message.getText();
+        System.out.println(welcome_message);
+        Assert.assertTrue(welcome_message.contains("welcome to your account"));
+    }
+
+    public void asserInvalidLogginMessage() {
+
+        String in_login_mess = invalid_ps_email_message.getText();
+        Assert.assertTrue(in_login_mess.contains("Please check your email address and password"));
     }
 
     public void nav_to_cart() {
@@ -184,5 +222,23 @@ public class Order_loginPage extends Base {
         Assert.assertEquals(cart_product_name, actual_product_name);
     }
 
+    public void assertLoginTitle() {
+
+        String titleLogin = Driver.get(ConfigurationReader.get("browser")).getTitle();
+        System.out.println(titleLogin);
+        Assert.assertTrue(titleLogin.contains("Buy designer handbags and accessories online"));
+    }
+
+    public void assertUrlLoginPage() {
+
+        String currentUrl = Driver.get(ConfigurationReader.get("browser")).getCurrentUrl();
+
+        System.out.println(currentUrl);
+
+        String expectedUrl = "https://www.fashionette.co.uk/login";
+
+        Assert.assertEquals(expectedUrl, currentUrl);
+
+    }
 
 }
